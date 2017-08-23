@@ -17,8 +17,7 @@ print url
 source = urllib.urlopen(url).read()
 soup = BeautifulSoup(source, 'html.parser')
 heading = soup.find(id='Dyskografia')
-heading2 = heading.find_next('h3')
-titles = heading2.find_next('ul')
+titles = heading.find_next('ul')
 discs = titles.find_all('li')
 for disc in discs:
     print disc.get_text()
