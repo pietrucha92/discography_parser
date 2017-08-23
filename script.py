@@ -12,11 +12,11 @@ elif len(sys.argv)>2:
 else:
     band = "Metallica"
 
-url = "https://pl.wikipedia.org/wiki/" + band
+url = "https://en.wikipedia.org/wiki/" + band
 print url
 source = urllib.urlopen(url).read()
 soup = BeautifulSoup(source, 'html.parser')
-heading = soup.find(id='Dyskografia')
+heading = soup.find(id='Discography')
 titles = heading.find_next('ul')
 discs = titles.find_all('li')
 for disc in discs:
