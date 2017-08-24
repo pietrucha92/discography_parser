@@ -14,14 +14,14 @@ elif len(sys.argv)==3:
     band = sys.argv[2]
 elif len(sys.argv)>3:
     print "Podano za duzo danych"
-    exit
+    quit() 
 else:
     band = "Metallica"
 if lan == "pl":
     discography="Dyskografia"
    
 url = "https://"+lan+".wikipedia.org/wiki/" + band
-print url, discography
+
 source = urllib.urlopen(url).read()
 soup = BeautifulSoup(source, 'html.parser')
 heading = soup.find(id=discography)
